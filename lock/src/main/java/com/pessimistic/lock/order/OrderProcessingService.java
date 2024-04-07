@@ -20,7 +20,6 @@ public class OrderProcessingService {
     @Transactional
     public void processOrders() {
         List<Order> pendingOrders = orderRepository.getAndLockOrderWithSkipLocked(PENDING, 10);
-        System.out.println(pendingOrders);
-        pendingOrders.forEach(Order::process);
+        orderRepository.updateStatusToExecuted(pendingOrders.stream().map(Order::getId).toList());
     }
 }

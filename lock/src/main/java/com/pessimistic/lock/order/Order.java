@@ -3,11 +3,9 @@ package com.pessimistic.lock.order;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
 
-import static com.pessimistic.lock.order.Status.EXECUTED;
 import static com.pessimistic.lock.order.Status.PENDING;
-import static java.time.LocalDateTime.*;
+import static java.time.LocalDateTime.now;
 
 @Entity
 @Table(name = "`order`")
@@ -49,10 +47,6 @@ public class Order {
 
     public Status getStatus() {
         return status;
-    }
-
-    public void process() {
-        this.status = EXECUTED;
     }
 
     @Override
