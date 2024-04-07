@@ -3,7 +3,7 @@
 ### Configurações da aplicação
 
 * Java JDK 17
-* Mysql: 3.0.36
+* Mysql: 8.0.36
 
 # Detalhes
 
