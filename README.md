@@ -15,11 +15,11 @@ informar as duas cláusulas durante a execução de um filtro no banco de dados:
 
 ![image](https://github.com/edirlucasi7/menssageria-mysql/assets/28410756/50ed806f-7d25-44e9-96fb-0e1882dfc640)
 
-De modo gearal, qualquer consulta com `FOR UPDATE` trava explicitamente as linhas afetadas pela consulta durante uma transação. Isso impede que outras transações modifiquem essas linhas até que a transação que as bloqueou seja concluída.
+De modo geral, qualquer consulta com `FOR UPDATE` trava explicitamente as linhas afetadas pela consulta durante uma transação. Isso impede que outras transações modifiquem essas linhas até que a transação que as bloqueou seja concluída.
 
 Enquanto que o `SKIP LOCKED` permite que uma consulta ignore linhas que estão bloqueadas por outras transações.
 
-É possível testar da seguinte forma: cadastre 20 ou mais ordens através do enpoint: `http://localhost:8089/api/order/create`, com seguinte corpo:
+É possível testar da seguinte forma: cadastre 20 ou mais ordens através do endpoint: `http://localhost:8089/api/order/create`, com seguinte corpo:
 
 ```
 {
