@@ -8,9 +8,15 @@ import javax.persistence.LockModeType;
 import java.util.List;
 
 @Repository
-public class OrderRepository2 {
+public class OrderRepository {
 
-    public List<Order> getAndLockOrderWithSkipLocked(EntityManager entityManager, Status status, int orderCount) {
+    private final EntityManager entityManager;
+
+    public OrderRepository(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
+    public List<Order> getAndLockOrderWithSkipLocked(Status status, int orderCount) {
         String query = """
                     SELECT o FROM Order o WHERE o.status = :status ORDER BY o.id
                 """;
