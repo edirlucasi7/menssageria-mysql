@@ -19,7 +19,7 @@ De modo geral, qualquer consulta com `FOR UPDATE` trava explicitamente as linhas
 
 Enquanto que o `SKIP LOCKED` permite que uma consulta ignore linhas que estão bloqueadas por outras transações.
 
-É possível testar da seguinte forma: cadastre 20 ou mais ordens através do endpoint: `http://localhost:8089/api/order/create`, com seguinte corpo:
+É possível testar da seguinte forma: cadastrar 20 ou mais ordens através do endpoint: `http://localhost:8089/api/order/create`, com o seguinte corpo:
 
 ```
 {
@@ -28,8 +28,8 @@ Enquanto que o `SKIP LOCKED` permite que uma consulta ignore linhas que estão b
 }
 ```
 
-Em seguida, chame o endpoint `http://localhost:8089/api/order/process` e verifique as ordens com `status` atualizado.
+Em seguida, chamar o endpoint `http://localhost:8089/api/order/process` e verificar as ordens com `status` atualizado.
 
 ![image](https://github.com/edirlucasi7/menssageria-mysql/assets/28410756/6dc7bc9c-2e7d-4b62-b01a-452dee312245)
 
-Em resumo, uma das transações obtém o lock da linha em questão e continua em busca da  próxima linha que ainda não obteve lock. Assim, cada transação retorna 10 resultados das respectivas linhas que não estavam com skip locked fornecido por outra transação.
+Em resumo, uma das transações obtém o lock da linha em questão e continua em busca da próxima linha que ainda não obteve lock. Assim, cada transação retorna 10 resultados das respectivas linhas que não estavam com skip locked fornecido por outra transação.
