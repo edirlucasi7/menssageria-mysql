@@ -7,7 +7,7 @@
 
 # Detalhes
 
-- Aplicação que simula o consumo de eventos de uma fila, porém, utilizando um banco de dados relacional. Sem broker (kafka, RabbitMQ), sem SQS, SNS. Apenas
+- Aplicação que simula o consumo de eventos de uma fila. Porém, sem broker (kafka, RabbitMQ), sem SQS, SNS. Apenas
 fazendo uso do bom e velho banco de dados relacional. https://dev.mysql.com/blog-archive/mysql-8-0-1-using-skip-locked-and-nowait-to-handle-hot-rows/
 
 - Usei uma estratégia que alguns bancos de dados como PostegreSQL, Oracle e Mysql oferecem suporte, chamada de FOR UPDATE E SKIP LOCKED. Basicamente, é possível
